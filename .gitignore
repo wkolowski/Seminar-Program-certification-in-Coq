@@ -16,7 +16,10 @@ tex/*.tex
 **.synctex.gz
 
 .coqdeps.d
+
 .makefile.d
+makefile
+makefile.conf
 
 .vscode
 .lia.cache
