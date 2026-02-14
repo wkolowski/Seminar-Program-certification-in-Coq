@@ -23,3 +23,7 @@ makefile.conf
 
 .vscode
 .lia.cache
+
+code/
+
+result

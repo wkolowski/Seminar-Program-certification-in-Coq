@@ -25,7 +25,7 @@ pkgs.mkShell
     RESET="\033[0m"
 
     export PROJECT_ROOT=$(pwd)
-    export PS1="\n\[''${GREEN}\]Cat\''${PWD#\''$PROJECT_ROOT}>\[''${RESET}\] "
+    export PS1="\n\[''${GREEN}\]Seminar\''${PWD#\''$PROJECT_ROOT}>\[''${RESET}\] "
 
     echo ""
     echo -e "Seminar: Program certification in Coq"
