@@ -1,11 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Induction in Coq</title>
-<link href="coqdoc.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="jquery-3.5.1.js"></script>
-<script type="text/javascript" src="main.js"></script>
-<script type="text/javascript" src="MyStyles.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>Seminar: Induction</title>
 </head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
 <h1 class="libtitle">Seminar: Induction</h1>
 
 <div class="code">
@@ -40,16 +50,9 @@
 
 <br/>
 <span class="id" title="keyword">Print</span> <span class="id" title="var">False</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;Inductive&nbsp;False&nbsp;:&nbsp;Prop&nbsp;:=<br/>
-*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">Print</span> <span class="id" title="var">True</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;Inductive&nbsp;True&nbsp;:&nbsp;Prop&nbsp;:=<br/>
-&nbsp;&nbsp;|&nbsp;I&nbsp;:&nbsp;True.<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -86,24 +89,12 @@
 
 <br/>
 <span class="id" title="keyword">Print</span> <span class="id" title="var">Empty_set</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;Inductive&nbsp;Empty_set&nbsp;:&nbsp;Set&nbsp;:=&nbsp;.<br/>
-*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">Print</span> <span class="id" title="var">unit</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;Inductive&nbsp;unit&nbsp;:&nbsp;Set&nbsp;:=<br/>
-&nbsp;&nbsp;|&nbsp;tt&nbsp;:&nbsp;unit.<br/>
-*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">Print</span> <span class="id" title="var">bool</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;Inductive&nbsp;bool&nbsp;:&nbsp;Set&nbsp;:=<br/>
-&nbsp;&nbsp;|&nbsp;true&nbsp;:&nbsp;bool<br/>
-&nbsp;&nbsp;|&nbsp;false&nbsp;:&nbsp;bool<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -127,9 +118,13 @@
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">bool_inhabited</span> : <span class="id" title="var">bool</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">VeryTrue_inhabited</span> : <span class="id" title="var">VeryTrue</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 </div>
@@ -146,11 +141,15 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">unit_contractible</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">x</span> <span class="id" title="var">y</span> : <span class="id" title="var">unit</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">x</span> = <span class="id" title="var">y</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">bool_not_contractible</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">exists</span> <span class="id" title="var">x</span> <span class="id" title="var">y</span> : <span class="id" title="var">bool</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">x</span> &lt;&gt; <span class="id" title="var">y</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 </div>
@@ -168,6 +167,8 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">True_contractible</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">x</span> <span class="id" title="var">y</span> : <span class="id" title="var">True</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">x</span> = <span class="id" title="var">y</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">VeryTrue_not_contractible</span> :<br/>
@@ -196,6 +197,8 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">VeryTrue_contractible</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">x</span> <span class="id" title="var">y</span> : <span class="id" title="var">VeryTrue</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">x</span> = <span class="id" title="var">y</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 </div>
@@ -211,10 +214,6 @@
 
 <br/>
 <span class="id" title="keyword">Check</span> <span class="id" title="var">proof_irrelevance</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;proof_irrelevance&nbsp;:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;(P&nbsp;:&nbsp;Prop)&nbsp;(p1&nbsp;p2&nbsp;:&nbsp;P),&nbsp;p1&nbsp;=&nbsp;p2<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -277,6 +276,8 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">no_bij_unit_bool</span> :<br/>
 &nbsp;&nbsp;~ <span class="id" title="tactic">exists</span> <span class="id" title="var">f</span> : <span class="id" title="var">unit</span> -&gt; <span class="id" title="var">bool</span>, <span class="id" title="var">Bijective</span> <span class="id" title="var">f</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 </div>
@@ -292,6 +293,8 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">unit_not_bool</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="var">unit</span> &lt;&gt; <span class="id" title="var">bool</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 </div>
@@ -308,6 +311,8 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">VeryTrue_True</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="var">VeryTrue</span> &lt;-&gt; <span class="id" title="var">True</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 </div>
@@ -324,6 +329,8 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">bij_VeryTrue_True</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">exists</span> <span class="id" title="var">f</span> : <span class="id" title="var">VeryTrue</span> -&gt; <span class="id" title="var">True</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">Bijective</span> <span class="id" title="var">f</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 </div>
@@ -358,10 +365,6 @@
 
 <br/>
 <span class="id" title="keyword">Print</span> <span class="id" title="var">prop_extensionality</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;prop_extensionality&nbsp;=<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;A&nbsp;B&nbsp;:&nbsp;Prop,&nbsp;A&nbsp;&lt;-&gt;&nbsp;B&nbsp;-&gt;&nbsp;A&nbsp;=&nbsp;B&nbsp;:&nbsp;Prop<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -393,6 +396,8 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">VeryTrue_is_True</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="var">VeryTrue</span> = <span class="id" title="var">True</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 </div>
@@ -499,11 +504,15 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">TheTruest_True</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="var">TheTruest</span> &lt;-&gt; <span class="id" title="var">True</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">TheTruest_contractible</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">x</span> <span class="id" title="var">y</span> : <span class="id" title="var">TheTruest</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">x</span> = <span class="id" title="var">y</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 </div>
@@ -541,10 +550,14 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">BePatient_false</span> :<br/>
 &nbsp;&nbsp;~ <span class="id" title="var">BePatient</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">BePatient_False</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="var">BePatient</span> &lt;-&gt; <span class="id" title="var">False</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 </div>
@@ -596,10 +609,14 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">LatentFalsity_false</span> :<br/>
 &nbsp;&nbsp;~ <span class="id" title="var">LatentFalsity</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">LatentFalsity_False</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="var">LatentFalsity</span> &lt;-&gt; <span class="id" title="var">False</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 </div>
@@ -691,11 +708,6 @@
 
 <br/>
 <span class="id" title="keyword">Check</span> <span class="id" title="var">bool_ind</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;bool_ind&nbsp;:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;P&nbsp;:&nbsp;bool&nbsp;-&gt;&nbsp;Prop,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P&nbsp;true&nbsp;-&gt;&nbsp;P&nbsp;false&nbsp;-&gt;&nbsp;forall&nbsp;b&nbsp;:&nbsp;bool,&nbsp;P&nbsp;b<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -726,14 +738,6 @@
 
 <br/>
 <span class="id" title="keyword">Print</span> <span class="id" title="var">bool_rect</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;bool_rect<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;fun&nbsp;(P&nbsp;:&nbsp;bool&nbsp;-&gt;&nbsp;Type)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(f&nbsp;:&nbsp;P&nbsp;true)&nbsp;(f0&nbsp;:&nbsp;P&nbsp;false)&nbsp;(b&nbsp;:&nbsp;bool)&nbsp;=&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;b&nbsp;as&nbsp;b0&nbsp;return&nbsp;(P&nbsp;b0)&nbsp;then&nbsp;f&nbsp;else&nbsp;f0<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;forall&nbsp;P&nbsp;:&nbsp;bool&nbsp;-&gt;&nbsp;Type,&nbsp;P&nbsp;true&nbsp;-&gt;&nbsp;P&nbsp;false&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;b&nbsp;:&nbsp;bool,&nbsp;P&nbsp;b<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -802,13 +806,6 @@
 
 <br/>
 <span class="id" title="keyword">Check</span> <span class="id" title="var">nat_ind</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;nat_ind&nbsp;:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;P&nbsp;:&nbsp;nat&nbsp;-&gt;&nbsp;Prop,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P&nbsp;0&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(forall&nbsp;n&nbsp;:&nbsp;nat,&nbsp;P&nbsp;n&nbsp;-&gt;&nbsp;P&nbsp;(S&nbsp;n))&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;n&nbsp;:&nbsp;nat,&nbsp;P&nbsp;n<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -831,21 +828,6 @@
 
 <br/>
 <span class="id" title="keyword">Print</span> <span class="id" title="var">nat_rect</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;nat_rect<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;fun<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(P&nbsp;:&nbsp;nat&nbsp;-&gt;&nbsp;Type)&nbsp;(f&nbsp;:&nbsp;P&nbsp;0)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(f0&nbsp;:&nbsp;forall&nbsp;n&nbsp;:&nbsp;nat,&nbsp;P&nbsp;n&nbsp;-&gt;&nbsp;P&nbsp;(S&nbsp;n))&nbsp;=&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fix&nbsp;F&nbsp;(n&nbsp;:&nbsp;nat)&nbsp;:&nbsp;P&nbsp;n&nbsp;:=<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;match&nbsp;n&nbsp;as&nbsp;n0&nbsp;return&nbsp;(P&nbsp;n0)&nbsp;with<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;0&nbsp;=&gt;&nbsp;f<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;S&nbsp;n0&nbsp;=&gt;&nbsp;f0&nbsp;n0&nbsp;(F&nbsp;n0)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;forall&nbsp;P&nbsp;:&nbsp;nat&nbsp;-&gt;&nbsp;Type,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P&nbsp;0&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(forall&nbsp;n&nbsp;:&nbsp;nat,&nbsp;P&nbsp;n&nbsp;-&gt;&nbsp;P&nbsp;(S&nbsp;n))&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;n&nbsp;:&nbsp;nat,&nbsp;P&nbsp;n<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -935,11 +917,6 @@
 
 <br/>
 <span class="id" title="keyword">Print</span> <span class="id" title="var">option</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;Inductive&nbsp;option&nbsp;(A&nbsp;:&nbsp;Type)&nbsp;:&nbsp;Type&nbsp;:=<br/>
-&nbsp;&nbsp;|&nbsp;Some&nbsp;:&nbsp;A&nbsp;-&gt;&nbsp;option&nbsp;A<br/>
-&nbsp;&nbsp;|&nbsp;None&nbsp;:&nbsp;option&nbsp;A.<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -954,9 +931,6 @@
 
 <br/>
 <span class="id" title="keyword">Check</span> <span class="id" title="var">option</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;option&nbsp;:&nbsp;Type&nbsp;-&gt;&nbsp;Type<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -979,47 +953,21 @@
 
 <br/>
 <span class="id" title="keyword">Print</span> <span class="id" title="var">prod</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;Inductive&nbsp;prod&nbsp;(A&nbsp;B&nbsp;:&nbsp;Type)&nbsp;:&nbsp;Type&nbsp;:=<br/>
-&nbsp;&nbsp;|&nbsp;pair&nbsp;:&nbsp;A&nbsp;-&gt;&nbsp;B&nbsp;-&gt;&nbsp;A&nbsp;*&nbsp;B.<br/>
-*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">Print</span> <span class="id" title="var">sum</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;Inductive&nbsp;sum&nbsp;(A&nbsp;B&nbsp;:&nbsp;Type)&nbsp;:&nbsp;Type&nbsp;:=<br/>
-&nbsp;&nbsp;|&nbsp;inl&nbsp;:&nbsp;A&nbsp;-&gt;&nbsp;A&nbsp;+&nbsp;B<br/>
-&nbsp;&nbsp;|&nbsp;inr&nbsp;:&nbsp;B&nbsp;-&gt;&nbsp;A&nbsp;+&nbsp;B.<br/>
-*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">Print</span> <span class="id" title="var">sigT</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;Inductive&nbsp;sigT&nbsp;(A&nbsp;:&nbsp;Type)&nbsp;(P&nbsp;:&nbsp;A&nbsp;-&gt;&nbsp;Type)&nbsp;:&nbsp;Type&nbsp;:=<br/>
-&nbsp;&nbsp;|&nbsp;existT&nbsp;:&nbsp;forall&nbsp;x&nbsp;:&nbsp;A,&nbsp;P&nbsp;x&nbsp;-&gt;&nbsp;{x&nbsp;:&nbsp;A&nbsp;&amp;&nbsp;P&nbsp;x}.<br/>
-*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">Print</span> <span class="id" title="var">and</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;Inductive&nbsp;and&nbsp;(A&nbsp;B&nbsp;:&nbsp;Prop)&nbsp;:&nbsp;Prop&nbsp;:=<br/>
-&nbsp;&nbsp;|&nbsp;conj&nbsp;:&nbsp;A&nbsp;-&gt;&nbsp;B&nbsp;-&gt;&nbsp;A&nbsp;/\&nbsp;B.<br/>
-*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">Print</span> <span class="id" title="var">or</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;Inductive&nbsp;or&nbsp;(A&nbsp;B&nbsp;:&nbsp;Prop)&nbsp;:&nbsp;Prop&nbsp;:=<br/>
-&nbsp;&nbsp;|&nbsp;or_introl&nbsp;:&nbsp;A&nbsp;-&gt;&nbsp;A&nbsp;\/&nbsp;B<br/>
-&nbsp;&nbsp;|&nbsp;or_intror&nbsp;:&nbsp;B&nbsp;-&gt;&nbsp;A&nbsp;\/&nbsp;B.<br/>
-*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">Print</span> <span class="id" title="var">ex</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;Inductive&nbsp;ex&nbsp;(A&nbsp;:&nbsp;Type)&nbsp;(P&nbsp;:&nbsp;A&nbsp;-&gt;&nbsp;Prop)&nbsp;:&nbsp;Prop&nbsp;:=<br/>
-&nbsp;&nbsp;|&nbsp;ex_intro&nbsp;:&nbsp;forall&nbsp;x&nbsp;:&nbsp;A,&nbsp;P&nbsp;x&nbsp;-&gt;&nbsp;exists&nbsp;y,&nbsp;P&nbsp;y.<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -1056,9 +1004,6 @@
 
 <br/>
 <span class="id" title="keyword">Check</span> <span class="id" title="var">even</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;even&nbsp;:&nbsp;nat&nbsp;-&gt;&nbsp;Prop<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -1105,6 +1050,8 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">P_char</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">n</span> : <span class="id" title="var">nat</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">P</span> <span class="id" title="var">n</span> &lt;-&gt; <span class="id" title="tactic">exists</span> <span class="id" title="var">k</span> : <span class="id" title="var">nat</span>, <span class="id" title="var">n</span> = 2 + 3 * <span class="id" title="var">k</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">End</span> <span class="id" title="var">Ex1_1</span>.<br/>
@@ -1122,6 +1069,8 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">P_char</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">n</span> : <span class="id" title="var">nat</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">P</span> <span class="id" title="var">n</span> &lt;-&gt; <span class="id" title="tactic">exists</span> <span class="id" title="var">k</span> <span class="id" title="var">l</span> : <span class="id" title="var">nat</span>, <span class="id" title="var">n</span> = 1 + 2 * <span class="id" title="var">k</span> + 3 * <span class="id" title="var">l</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">End</span> <span class="id" title="var">Ex1_2</span>.<br/>
@@ -1138,6 +1087,8 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">P_char</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">n</span> <span class="id" title="var">m</span> : <span class="id" title="var">nat</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">P</span> <span class="id" title="var">n</span> <span class="id" title="var">m</span> &lt;-&gt; <span class="id" title="var">m</span> = 1 + 2 * <span class="id" title="var">n</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">End</span> <span class="id" title="var">Ex1_3</span>.<br/>
@@ -1154,6 +1105,8 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">P_char</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">n</span> <span class="id" title="var">m</span> : <span class="id" title="var">nat</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">P</span> <span class="id" title="var">n</span> <span class="id" title="var">m</span> &lt;-&gt; <span class="id" title="var">m</span> = <span class="id" title="var">n</span> * <span class="id" title="var">n</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">End</span> <span class="id" title="var">Ex1_4</span>.<br/>
@@ -1170,6 +1123,8 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">P_char</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">n</span> <span class="id" title="var">m</span> : <span class="id" title="var">nat</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">P</span> <span class="id" title="var">n</span> <span class="id" title="var">m</span> &lt;-&gt; <span class="id" title="var">m</span> = 1 + 7 * <span class="id" title="var">n</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">End</span> <span class="id" title="var">Ex2_1</span>.<br/>
@@ -1196,6 +1151,8 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">P_char</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">n</span> <span class="id" title="var">m</span> : <span class="id" title="var">nat</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">P</span> <span class="id" title="var">n</span> <span class="id" title="var">m</span> &lt;-&gt; <span class="id" title="var">m</span> = <span class="id" title="var">pow2</span> <span class="id" title="var">n</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">End</span> <span class="id" title="var">Ex2_2</span>.<br/>
@@ -1220,6 +1177,8 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">P_char</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> : <span class="id" title="var">nat</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">P</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> &lt;-&gt; <span class="id" title="var">b</span> = <span class="id" title="var">fib</span> <span class="id" title="var">a</span> /\ <span class="id" title="var">c</span> = <span class="id" title="var">fib</span> (<span class="id" title="var">S</span> <span class="id" title="var">a</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">End</span> <span class="id" title="var">Ex2_3</span>.<br/>
@@ -1236,6 +1195,8 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">P_char</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> : <span class="id" title="var">nat</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">P</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> &lt;-&gt; <span class="id" title="var">b</span> = 1 + 2 * <span class="id" title="var">a</span> /\ <span class="id" title="var">c</span> = <span class="id" title="var">a</span> * <span class="id" title="var">a</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">End</span> <span class="id" title="var">Ex2_4</span>.<br/>
@@ -1284,19 +1245,27 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">P_T</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="var">P</span> <span class="id" title="var">T</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">P_T'</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="var">P</span> <span class="id" title="var">T'</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">T_not_T'</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="var">T</span> &lt;&gt; <span class="id" title="var">T'</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">T_sub_T'</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">n</span> : <span class="id" title="var">nat</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">T</span> <span class="id" title="var">n</span> -&gt; <span class="id" title="var">T'</span> <span class="id" title="var">n</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">End</span> <span class="id" title="var">Ex3</span>.<br/>
@@ -1314,11 +1283,6 @@
 
 <br/>
 <span class="id" title="keyword">Print</span> <span class="id" title="var">le</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;Inductive&nbsp;le&nbsp;(n&nbsp;:&nbsp;nat)&nbsp;:&nbsp;nat&nbsp;-&gt;&nbsp;Prop&nbsp;:=<br/>
-&nbsp;&nbsp;|&nbsp;le_n&nbsp;:&nbsp;n&nbsp;&lt;=&nbsp;n<br/>
-&nbsp;&nbsp;|&nbsp;le_S&nbsp;:&nbsp;forall&nbsp;m&nbsp;:&nbsp;nat,&nbsp;n&nbsp;&lt;=&nbsp;m&nbsp;-&gt;&nbsp;n&nbsp;&lt;=&nbsp;S&nbsp;m.<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -1353,16 +1317,22 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">le_le'</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">n</span> <span class="id" title="var">m</span> : <span class="id" title="var">nat</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">n</span> &lt;= <span class="id" title="var">m</span> &lt;-&gt; <span class="id" title="var">le'</span> <span class="id" title="var">n</span> <span class="id" title="var">m</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">le_plus</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">n</span> <span class="id" title="var">m</span> <span class="id" title="var">k</span> : <span class="id" title="var">nat</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">le</span> <span class="id" title="var">n</span> <span class="id" title="var">m</span> -&gt; <span class="id" title="var">le</span> (<span class="id" title="var">n</span> + <span class="id" title="var">k</span>) (<span class="id" title="var">m</span> + <span class="id" title="var">k</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">le'_plus</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">n</span> <span class="id" title="var">m</span> <span class="id" title="var">k</span> : <span class="id" title="var">nat</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">le'</span> <span class="id" title="var">n</span> <span class="id" title="var">m</span> -&gt; <span class="id" title="var">le'</span> (<span class="id" title="var">n</span> + <span class="id" title="var">k</span>) (<span class="id" title="var">m</span> + <span class="id" title="var">k</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 </div>
@@ -1378,22 +1348,9 @@
 
 <br/>
 <span class="id" title="keyword">Check</span> <span class="id" title="var">le_ind</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;le_ind&nbsp;:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;(n&nbsp;:&nbsp;nat)&nbsp;(P&nbsp;:&nbsp;nat&nbsp;-&gt;&nbsp;Prop),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P&nbsp;n&nbsp;-&gt;&nbsp;(forall&nbsp;m&nbsp;:&nbsp;nat,&nbsp;n&nbsp;&lt;=&nbsp;m&nbsp;-&gt;&nbsp;P&nbsp;m&nbsp;-&gt;&nbsp;P&nbsp;(S&nbsp;m))&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;n0&nbsp;:&nbsp;nat,&nbsp;n&nbsp;&lt;=&nbsp;n0&nbsp;-&gt;&nbsp;P&nbsp;n0<br/>
-*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">Check</span> <span class="id" title="var">le'_ind</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;le'_ind&nbsp;:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;P&nbsp;:&nbsp;nat&nbsp;-&gt;&nbsp;nat&nbsp;-&gt;&nbsp;Prop,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(forall&nbsp;n&nbsp;:&nbsp;nat,&nbsp;P&nbsp;n&nbsp;n)&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(forall&nbsp;n&nbsp;m&nbsp;:&nbsp;nat,&nbsp;le'&nbsp;n&nbsp;m&nbsp;-&gt;&nbsp;P&nbsp;n&nbsp;m&nbsp;-&gt;&nbsp;P&nbsp;n&nbsp;(S&nbsp;m))&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;n&nbsp;n0&nbsp;:&nbsp;nat,&nbsp;le'&nbsp;n&nbsp;n0&nbsp;-&gt;&nbsp;P&nbsp;n&nbsp;n0<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -1489,21 +1446,9 @@
 
 <br/>
 <span class="id" title="keyword">Check</span> <span class="id" title="var">listA_ind</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;listA_ind&nbsp;:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;P&nbsp;:&nbsp;listA&nbsp;-&gt;&nbsp;Prop,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P&nbsp;nilA&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(forall&nbsp;(a&nbsp;:&nbsp;A)&nbsp;(l&nbsp;:&nbsp;listA),&nbsp;P&nbsp;l&nbsp;-&gt;&nbsp;P&nbsp;(consA&nbsp;a&nbsp;l))&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;l&nbsp;:&nbsp;listA,&nbsp;P&nbsp;l<br/>
-*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">Check</span> <span class="id" title="var">list_ind</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;list_ind&nbsp;:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;(A&nbsp;:&nbsp;Type)&nbsp;(P&nbsp;:&nbsp;list&nbsp;A&nbsp;-&gt;&nbsp;Prop),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P&nbsp;nil&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(forall&nbsp;(a&nbsp;:&nbsp;A)&nbsp;(l&nbsp;:&nbsp;list&nbsp;A),&nbsp;P&nbsp;l&nbsp;-&gt;&nbsp;P&nbsp;(a&nbsp;::&nbsp;l)*)</span><br/>
 
 <br/>
 </div>
@@ -1565,16 +1510,9 @@
 
 <br/>
 <span class="id" title="keyword">Check</span> <span class="id" title="var">icons</span> <span class="id" title="var">_</span> 5 (<span class="id" title="var">icons</span> <span class="id" title="var">_</span> 42 (<span class="id" title="var">inil</span> <span class="id" title="var">_</span>)).<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;icons&nbsp;nat&nbsp;5&nbsp;(icons&nbsp;nat&nbsp;42&nbsp;(inil&nbsp;nat))&nbsp;:&nbsp;ilist&nbsp;nat<br/>
-*)</span><br/>
 
 <br/>
 <span class="id" title="var">Fail</span> <span class="id" title="keyword">Check</span> <span class="id" title="var">icons</span> <span class="id" title="var">_</span> 42 (<span class="id" title="var">icons</span> <span class="id" title="var">_</span> <span class="id" title="var">true</span> (<span class="id" title="var">inil</span> <span class="id" title="var">_</span>)).<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;The&nbsp;term&nbsp;"icons&nbsp;bool&nbsp;true&nbsp;(inil&nbsp;bool)"&nbsp;has&nbsp;type&nbsp;"ilist&nbsp;bool"<br/>
-&nbsp;&nbsp;while&nbsp;it&nbsp;is&nbsp;expected&nbsp;to&nbsp;have&nbsp;type&nbsp;"ilist&nbsp;nat".<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -1589,14 +1527,6 @@
 
 <br/>
 <span class="id" title="keyword">Check</span> <span class="id" title="var">ilist_ind</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;ilist_ind&nbsp;:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;P&nbsp;:&nbsp;forall&nbsp;T&nbsp;:&nbsp;Type,&nbsp;ilist&nbsp;T&nbsp;-&gt;&nbsp;Prop,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(forall&nbsp;A&nbsp;:&nbsp;Type,&nbsp;P&nbsp;A&nbsp;(inil&nbsp;A))&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(forall&nbsp;(A&nbsp;:&nbsp;Type)&nbsp;(a&nbsp;:&nbsp;A)&nbsp;(i&nbsp;:&nbsp;ilist&nbsp;A),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P&nbsp;A&nbsp;i&nbsp;-&gt;&nbsp;P&nbsp;A&nbsp;(icons&nbsp;A&nbsp;a&nbsp;i))&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;(T&nbsp;:&nbsp;Type)&nbsp;(i&nbsp;:&nbsp;ilist&nbsp;T),&nbsp;P&nbsp;T&nbsp;i<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -1680,38 +1610,15 @@
 
 <br/>
 <span class="id" title="keyword">Check</span> <span class="id" title="var">prod_rect</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;prod_rect&nbsp;:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;(A&nbsp;B&nbsp;:&nbsp;Type)&nbsp;(P&nbsp;:&nbsp;A&nbsp;*&nbsp;B&nbsp;-&gt;&nbsp;Type),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(forall&nbsp;(a&nbsp;:&nbsp;A)&nbsp;(b&nbsp;:&nbsp;B),&nbsp;P&nbsp;(a,&nbsp;b))&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;p&nbsp;:&nbsp;A&nbsp;*&nbsp;B,&nbsp;P&nbsp;p<br/>
-*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">Check</span> <span class="id" title="var">sum_rect</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;sum_rect&nbsp;:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;(A&nbsp;B&nbsp;:&nbsp;Type)&nbsp;(P&nbsp;:&nbsp;A&nbsp;+&nbsp;B&nbsp;-&gt;&nbsp;Type),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(forall&nbsp;a&nbsp;:&nbsp;A,&nbsp;P&nbsp;(inl&nbsp;a))&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(forall&nbsp;b&nbsp;:&nbsp;B,&nbsp;P&nbsp;(inr&nbsp;b))&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;s&nbsp;:&nbsp;A&nbsp;+&nbsp;B,&nbsp;P&nbsp;s<br/>
-*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">Check</span> <span class="id" title="var">and_ind</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;and_ind&nbsp;:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;A&nbsp;B&nbsp;P&nbsp;:&nbsp;Prop,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(A&nbsp;-&gt;&nbsp;B&nbsp;-&gt;&nbsp;P)&nbsp;-&gt;&nbsp;A&nbsp;/\&nbsp;B&nbsp;-&gt;&nbsp;P<br/>
-*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">Check</span> <span class="id" title="var">or_ind</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;or_ind&nbsp;:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;A&nbsp;B&nbsp;P&nbsp;:&nbsp;Prop,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(A&nbsp;-&gt;&nbsp;P)&nbsp;-&gt;&nbsp;(B&nbsp;-&gt;&nbsp;P)&nbsp;-&gt;&nbsp;A&nbsp;\/&nbsp;B&nbsp;-&gt;&nbsp;P<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -1752,19 +1659,9 @@
 
 <br/>
 <span class="id" title="keyword">Check</span> <span class="id" title="var">prod_rect_min</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;prod_ind_min&nbsp;:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;(A&nbsp;B&nbsp;:&nbsp;Type)&nbsp;(P&nbsp;:&nbsp;Type),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(A&nbsp;-&gt;&nbsp;B&nbsp;-&gt;&nbsp;P)&nbsp;-&gt;&nbsp;A&nbsp;*&nbsp;B&nbsp;-&gt;&nbsp;P<br/>
-*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">Check</span> <span class="id" title="var">sum_rect_min</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;sum_ind_min&nbsp;:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;(A&nbsp;B&nbsp;:&nbsp;Type)&nbsp;(P&nbsp;:&nbsp;Type),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(A&nbsp;-&gt;&nbsp;P)&nbsp;-&gt;&nbsp;(B&nbsp;-&gt;&nbsp;P)&nbsp;-&gt;&nbsp;A&nbsp;+&nbsp;B&nbsp;-&gt;&nbsp;P<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -1819,22 +1716,9 @@
 
 <br/>
 <span class="id" title="keyword">Check</span> <span class="id" title="var">and_ind_max</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;and_ind_max&nbsp;:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;(A&nbsp;B&nbsp;:&nbsp;Prop)&nbsp;(P&nbsp;:&nbsp;A&nbsp;/\&nbsp;B&nbsp;-&gt;&nbsp;Prop),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(forall&nbsp;(a&nbsp;:&nbsp;A)&nbsp;(b&nbsp;:&nbsp;B),&nbsp;P&nbsp;(conj&nbsp;a&nbsp;b))&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;a&nbsp;:&nbsp;A&nbsp;/\&nbsp;B,&nbsp;P&nbsp;a<br/>
-*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">Check</span> <span class="id" title="var">or_ind_max</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;or_ind_max&nbsp;:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;(A&nbsp;B&nbsp;:&nbsp;Prop)&nbsp;(P&nbsp;:&nbsp;A&nbsp;\/&nbsp;B&nbsp;-&gt;&nbsp;Prop),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(forall&nbsp;a&nbsp;:&nbsp;A,&nbsp;P&nbsp;(or_introl&nbsp;a))&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(forall&nbsp;b&nbsp;:&nbsp;B,&nbsp;P&nbsp;(or_intror&nbsp;b))&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;o&nbsp;:&nbsp;A&nbsp;\/&nbsp;B,&nbsp;P&nbsp;o<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -1916,11 +1800,6 @@
 
 <br/>
 <span class="id" title="keyword">Print</span> <span class="id" title="var">even</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;Inductive&nbsp;even&nbsp;:&nbsp;nat&nbsp;-&gt;&nbsp;Prop&nbsp;:=<br/>
-&nbsp;&nbsp;|&nbsp;even0&nbsp;:&nbsp;even&nbsp;0<br/>
-&nbsp;&nbsp;|&nbsp;evenSS&nbsp;:&nbsp;forall&nbsp;n&nbsp;:&nbsp;nat,&nbsp;even&nbsp;n&nbsp;-&gt;&nbsp;even&nbsp;(S&nbsp;(S&nbsp;n)).<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -2008,11 +1887,15 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">even_2n</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">n</span> : <span class="id" title="var">nat</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">even</span> <span class="id" title="var">n</span> -&gt; <span class="id" title="tactic">exists</span> <span class="id" title="var">k</span> : <span class="id" title="var">nat</span>, <span class="id" title="var">n</span> = 2 * <span class="id" title="var">k</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">odd_2n_1</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">n</span> : <span class="id" title="var">nat</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">odd</span> <span class="id" title="var">n</span> -&gt; <span class="id" title="tactic">exists</span> <span class="id" title="var">k</span> : <span class="id" title="var">nat</span>, <span class="id" title="var">n</span> = 2 * <span class="id" title="var">k</span> + 1.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 </div>
@@ -2069,13 +1952,6 @@
 
 <br/>
 <span class="id" title="keyword">Check</span> <span class="id" title="var">even'_ind</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;even'_ind&nbsp;:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;P&nbsp;:&nbsp;nat&nbsp;-&gt;&nbsp;Prop,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P&nbsp;0&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(forall&nbsp;n&nbsp;:&nbsp;nat,&nbsp;odd'&nbsp;n&nbsp;-&gt;&nbsp;P&nbsp;(S&nbsp;n))&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;n&nbsp;:&nbsp;nat,&nbsp;even'&nbsp;n&nbsp;-&gt;&nbsp;P&nbsp;n<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -2101,18 +1977,6 @@
 
 <br/>
 <span class="id" title="keyword">Check</span> <span class="id" title="var">even'_odd'_ind</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;even'_odd'_ind&nbsp;:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;forall<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;(P&nbsp;:&nbsp;forall&nbsp;n&nbsp;:&nbsp;nat,&nbsp;even'&nbsp;n&nbsp;-&gt;&nbsp;Prop)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;(P0&nbsp;:&nbsp;forall&nbsp;n&nbsp;:&nbsp;nat,&nbsp;odd'&nbsp;n&nbsp;-&gt;&nbsp;Prop),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P&nbsp;0&nbsp;even'_0&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(forall&nbsp;(n&nbsp;:&nbsp;nat)&nbsp;(o&nbsp;:&nbsp;odd'&nbsp;n),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P0&nbsp;n&nbsp;o&nbsp;-&gt;&nbsp;P&nbsp;(S&nbsp;n)&nbsp;(even'_S&nbsp;n&nbsp;o))&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(forall&nbsp;(n&nbsp;:&nbsp;nat)&nbsp;(e&nbsp;:&nbsp;even'&nbsp;n),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P&nbsp;n&nbsp;e&nbsp;-&gt;&nbsp;P0&nbsp;(S&nbsp;n)&nbsp;(odd'_S&nbsp;n&nbsp;e))&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;(n&nbsp;:&nbsp;nat)&nbsp;(e&nbsp;:&nbsp;even'&nbsp;n),&nbsp;P&nbsp;n&nbsp;e<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -2177,6 +2041,8 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">odd'_2n_1</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">n</span> : <span class="id" title="var">nat</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">odd'</span> <span class="id" title="var">n</span> -&gt; <span class="id" title="tactic">exists</span> <span class="id" title="var">k</span> : <span class="id" title="var">nat</span>, <span class="id" title="var">n</span> = 2 * <span class="id" title="var">k</span> + 1.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 </div>
@@ -2432,15 +2298,6 @@
 
 <br/>
 <span class="id" title="keyword">Eval</span> <span class="id" title="tactic">compute</span> <span class="id" title="tactic">in</span> <span class="id" title="var">Nat.div2</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;=&nbsp;fix&nbsp;Nat.div2&nbsp;(n&nbsp;:&nbsp;nat)&nbsp;:&nbsp;nat&nbsp;:=<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;match&nbsp;n&nbsp;with<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;0&nbsp;=&gt;&nbsp;0<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1&nbsp;=&gt;&nbsp;0<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;S&nbsp;(S&nbsp;n')&nbsp;=&gt;&nbsp;S&nbsp;(div2&nbsp;n')<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br/>
-&nbsp;&nbsp;:&nbsp;nat&nbsp;-&gt;&nbsp;nat<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -2508,9 +2365,6 @@
 
 <br/>
 <span class="id" title="keyword">Compute</span> <span class="id" title="var">swap_blocks</span> [1; 2; 3; 4; 5].<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;=&nbsp;<span class="inlinecode">[2;</span> <span class="inlinecode">1;</span> <span class="inlinecode">4;</span> <span class="inlinecode">3;</span> <span class="inlinecode">5]</span>&nbsp;:&nbsp;list&nbsp;nat<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -2560,18 +2414,6 @@
 
 <br/>
 <span class="id" title="keyword">Check</span> <span class="id" title="var">swap_blocks_ind</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;swap_blocks_ind&nbsp;:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;(A&nbsp;:&nbsp;Type)&nbsp;(P&nbsp;:&nbsp;list&nbsp;A&nbsp;-&gt;&nbsp;list&nbsp;A&nbsp;-&gt;&nbsp;Prop),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(forall&nbsp;l&nbsp;:&nbsp;list&nbsp;A,&nbsp;l&nbsp;=&nbsp;<span class="inlinecode"></span>&nbsp;-&gt;&nbsp;P&nbsp;<span class="inlinecode">[]</span>&nbsp;<span class="inlinecode">[]</span>)&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(forall&nbsp;(l&nbsp;:&nbsp;list&nbsp;A)&nbsp;(x&nbsp;:&nbsp;A)&nbsp;(l0&nbsp;:&nbsp;list&nbsp;A),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l&nbsp;=&nbsp;x&nbsp;::&nbsp;l0&nbsp;-&gt;&nbsp;l0&nbsp;=&nbsp;<span class="inlinecode"></span>&nbsp;-&gt;&nbsp;P&nbsp;<span class="inlinecode">[<span class="id" title="var">x</span>]</span>&nbsp;<span class="inlinecode">[<span class="id" title="var">x</span>]</span>)&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(forall&nbsp;(l&nbsp;:&nbsp;list&nbsp;A)&nbsp;(x&nbsp;:&nbsp;A)&nbsp;(l0&nbsp;:&nbsp;list&nbsp;A),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l&nbsp;=&nbsp;x&nbsp;::&nbsp;l0&nbsp;-&gt;&nbsp;forall&nbsp;(y&nbsp;:&nbsp;A)&nbsp;(t&nbsp;:&nbsp;list&nbsp;A),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l0&nbsp;=&nbsp;y&nbsp;::&nbsp;t&nbsp;-&gt;&nbsp;P&nbsp;t&nbsp;(swap_blocks&nbsp;t)&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P&nbsp;(x&nbsp;::&nbsp;y&nbsp;::&nbsp;t)&nbsp;(y&nbsp;::&nbsp;x&nbsp;::&nbsp;swap_blocks&nbsp;t))&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;l&nbsp;:&nbsp;list&nbsp;A,&nbsp;P&nbsp;l&nbsp;(swap_blocks&nbsp;l)<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -2657,6 +2499,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">Hsnoc</span> : <span class="id" title="keyword">forall</span> (<span class="id" title="var">x</span> : <span class="id" title="var">A</span>) (<span class="id" title="var">l</span> : <span class="id" title="var">list</span> <span class="id" title="var">A</span>), <span class="id" title="var">P</span> <span class="id" title="var">l</span> -&gt; <span class="id" title="var">P</span> (<span class="id" title="var">l</span> ++ [<span class="id" title="var">x</span>]))<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">l</span> : <span class="id" title="var">list</span> <span class="id" title="var">A</span>),<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">P</span> <span class="id" title="var">l</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">list_ind_app</span> :<br/>
@@ -2667,6 +2511,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">IH</span> : <span class="id" title="keyword">forall</span> <span class="id" title="var">l</span> <span class="id" title="var">l'</span> : <span class="id" title="var">list</span> <span class="id" title="var">A</span>, <span class="id" title="var">P</span> <span class="id" title="var">l</span> -&gt; <span class="id" title="var">P</span> <span class="id" title="var">l'</span> -&gt; <span class="id" title="var">P</span> (<span class="id" title="var">l</span> ++ <span class="id" title="var">l'</span>))<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">l</span> : <span class="id" title="var">list</span> <span class="id" title="var">A</span>),<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">P</span> <span class="id" title="var">l</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 </div>
@@ -2707,16 +2553,22 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">take_length'</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> (<span class="id" title="var">A</span> : <span class="id" title="keyword">Type</span>) (<span class="id" title="var">n</span> : <span class="id" title="var">nat</span>) (<span class="id" title="var">l</span> : <span class="id" title="var">list</span> <span class="id" title="var">A</span>),<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">length</span> <span class="id" title="var">l</span> &lt;= <span class="id" title="var">n</span> -&gt; <span class="id" title="var">take</span> <span class="id" title="var">n</span> <span class="id" title="var">l</span> = <span class="id" title="var">l</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">length_take</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> (<span class="id" title="var">A</span> : <span class="id" title="keyword">Type</span>) (<span class="id" title="var">n</span> : <span class="id" title="var">nat</span>) (<span class="id" title="var">l</span> : <span class="id" title="var">list</span> <span class="id" title="var">A</span>),<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">n</span> &lt;= <span class="id" title="var">length</span> <span class="id" title="var">l</span> -&gt; <span class="id" title="var">length</span> (<span class="id" title="var">take</span> <span class="id" title="var">n</span> <span class="id" title="var">l</span>) = <span class="id" title="var">n</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">length_take'</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> (<span class="id" title="var">A</span> : <span class="id" title="keyword">Type</span>) (<span class="id" title="var">n</span> : <span class="id" title="var">nat</span>) (<span class="id" title="var">l</span> : <span class="id" title="var">list</span> <span class="id" title="var">A</span>),<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">length</span> (<span class="id" title="var">take</span> <span class="id" title="var">n</span> <span class="id" title="var">l</span>) &lt;= <span class="id" title="var">n</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 
@@ -2802,11 +2654,6 @@
 
 <br/>
 <span class="id" title="keyword">Check</span> @<span class="id" title="var">functional_extensionality</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;@functional_extensionality&nbsp;:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;(A&nbsp;B&nbsp;:&nbsp;Type)&nbsp;(f&nbsp;g&nbsp;:&nbsp;A&nbsp;-&gt;&nbsp;B),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(forall&nbsp;x&nbsp;:&nbsp;A,&nbsp;f&nbsp;x&nbsp;=&nbsp;g&nbsp;x)&nbsp;-&gt;&nbsp;f&nbsp;=&nbsp;g<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -3031,6 +2878,8 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">div2_rel_SS</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">n</span> <span class="id" title="var">m</span> : <span class="id" title="var">nat</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">div2_rel</span> <span class="id" title="var">n</span> <span class="id" title="var">m</span> -&gt; <span class="id" title="var">div2_rel</span> (<span class="id" title="var">S</span> (<span class="id" title="var">S</span> <span class="id" title="var">n</span>)) (<span class="id" title="var">S</span> <span class="id" title="var">m</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 </div>
@@ -3045,6 +2894,8 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">div2_rel_correct</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">n</span> <span class="id" title="var">m</span> : <span class="id" title="var">nat</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">Nat.div2</span> <span class="id" title="var">n</span> = <span class="id" title="var">m</span> -&gt; <span class="id" title="var">div2_rel</span> <span class="id" title="var">n</span> <span class="id" title="var">m</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 </div>
@@ -3059,6 +2910,8 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">div2_rel_complete</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">n</span> <span class="id" title="var">m</span> : <span class="id" title="var">nat</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">div2_rel</span> <span class="id" title="var">n</span> <span class="id" title="var">m</span> -&gt; <span class="id" title="var">Nat.div2</span> <span class="id" title="var">n</span> = <span class="id" title="var">m</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 </div>
@@ -3104,6 +2957,8 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">Zfact_nonneg</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">n</span> : <span class="id" title="var">nat</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">Zfact</span> (<span class="id" title="var">Z.of_nat</span> <span class="id" title="var">n</span>) (<span class="id" title="var">Z.of_nat</span> (<span class="id" title="var">fact</span> <span class="id" title="var">n</span>)).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 </div>
@@ -3119,6 +2974,8 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">Zfact_neg</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">n</span> <span class="id" title="var">k</span> : <span class="id" title="var">Z</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">n</span> &lt; 0 -&gt; ~ <span class="id" title="var">Zfact</span> <span class="id" title="var">n</span> <span class="id" title="var">k</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 </div>
@@ -3229,26 +3086,9 @@
 
 <br/>
 <span class="id" title="keyword">Check</span> <span class="id" title="var">R_div2'_ind</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;R_div2'_ind&nbsp;:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;P&nbsp;:&nbsp;nat&nbsp;-&gt;&nbsp;nat&nbsp;-&gt;&nbsp;Prop,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P&nbsp;0&nbsp;0&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P&nbsp;1&nbsp;0&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(forall&nbsp;n&nbsp;r&nbsp;:&nbsp;nat,&nbsp;R_div2'&nbsp;n&nbsp;r&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P&nbsp;n&nbsp;r&nbsp;-&gt;&nbsp;P&nbsp;(S&nbsp;(S&nbsp;n))&nbsp;(S&nbsp;r))&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;n&nbsp;n0&nbsp;:&nbsp;nat,&nbsp;R_div2'&nbsp;n&nbsp;n0&nbsp;-&gt;&nbsp;P&nbsp;n&nbsp;n0<br/>
-*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">Check</span> <span class="id" title="var">div2_ind</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;div2_ind&nbsp;:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;P&nbsp;:&nbsp;nat&nbsp;-&gt;&nbsp;nat&nbsp;-&gt;&nbsp;Prop,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(forall&nbsp;n&nbsp;:&nbsp;nat,&nbsp;n&nbsp;=&nbsp;0&nbsp;-&gt;&nbsp;P&nbsp;0&nbsp;0)&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(forall&nbsp;n&nbsp;:&nbsp;nat,&nbsp;n&nbsp;=&nbsp;1&nbsp;-&gt;&nbsp;P&nbsp;1&nbsp;0)&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(forall&nbsp;n&nbsp;n'&nbsp;:&nbsp;nat,&nbsp;n&nbsp;=&nbsp;S&nbsp;(S&nbsp;n')&nbsp;-&gt;&nbsp;P&nbsp;n'&nbsp;(div2&nbsp;n')&nbsp;-&gt;&nbsp;P&nbsp;(S&nbsp;(S&nbsp;n'))&nbsp;(S&nbsp;(div2&nbsp;n')))&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;n&nbsp;:&nbsp;nat,&nbsp;P&nbsp;n&nbsp;(div2&nbsp;n)<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -3292,21 +3132,6 @@
 
 <br/>
 <span class="id" title="keyword">Print</span> <span class="id" title="var">R_div2</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;Inductive&nbsp;R_div2&nbsp;:&nbsp;nat&nbsp;-&gt;&nbsp;nat&nbsp;-&gt;&nbsp;Set&nbsp;:=<br/>
-&nbsp;&nbsp;|&nbsp;R_div2_0&nbsp;:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;n&nbsp;:&nbsp;nat,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n&nbsp;=&nbsp;0&nbsp;-&gt;&nbsp;R_div2&nbsp;0&nbsp;0<br/>
-&nbsp;&nbsp;|&nbsp;R_div2_1&nbsp;:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;n&nbsp;n0&nbsp;:&nbsp;nat,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n&nbsp;=&nbsp;S&nbsp;n0&nbsp;-&gt;&nbsp;n0&nbsp;=&nbsp;0&nbsp;-&gt;&nbsp;R_div2&nbsp;1&nbsp;0<br/>
-&nbsp;&nbsp;|&nbsp;R_div2_2&nbsp;:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;n&nbsp;n0&nbsp;:&nbsp;nat,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n&nbsp;=&nbsp;S&nbsp;n0&nbsp;-&gt;&nbsp;forall&nbsp;n'&nbsp;:&nbsp;nat,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n0&nbsp;=&nbsp;S&nbsp;n'&nbsp;-&gt;&nbsp;forall&nbsp;_res&nbsp;:&nbsp;nat,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R_div2&nbsp;n'&nbsp;_res&nbsp;-&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R_div2&nbsp;(S&nbsp;(S&nbsp;n'))&nbsp;(S&nbsp;_res)<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -3349,17 +3174,9 @@
 
 <br/>
 <span class="id" title="keyword">Check</span> <span class="id" title="var">R_div2_correct</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;R_div2_correct&nbsp;:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;n&nbsp;_res&nbsp;:&nbsp;nat,&nbsp;_res&nbsp;=&nbsp;Nat.div2&nbsp;n&nbsp;-&gt;&nbsp;R_div2&nbsp;n&nbsp;_res<br/>
-*)</span><br/>
 
 <br/>
 <span class="id" title="keyword">Check</span> <span class="id" title="var">R_div2_complete</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;R_div2_complete&nbsp;:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;n&nbsp;_res&nbsp;:&nbsp;nat,&nbsp;R_div2&nbsp;n&nbsp;_res&nbsp;-&gt;&nbsp;_res&nbsp;=&nbsp;Nat.div2&nbsp;n<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -3484,6 +3301,8 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">div2l_length</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> (<span class="id" title="var">A</span> : <span class="id" title="keyword">Type</span>) (<span class="id" title="var">l</span> : <span class="id" title="var">list</span> <span class="id" title="var">A</span>),<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">l</span> &lt;&gt; [] -&gt; <span class="id" title="var">length</span> (<span class="id" title="var">div2l</span> <span class="id" title="var">l</span>) &lt; <span class="id" title="var">length</span> <span class="id" title="var">l</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 </div>
@@ -3630,16 +3449,22 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">plus'_assoc_1</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> : <span class="id" title="var">nat</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">plus'</span> <span class="id" title="var">a</span> (<span class="id" title="var">plus'</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>) = <span class="id" title="var">plus'</span> (<span class="id" title="var">plus'</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>) <span class="id" title="var">c</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">plus'_assoc_2</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span> : <span class="id" title="var">nat</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">plus'</span> <span class="id" title="var">a</span> (<span class="id" title="var">plus'</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>) = <span class="id" title="var">plus'</span> (<span class="id" title="var">plus'</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>) <span class="id" title="var">c</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">plus'_assoc_3</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> <span class="id" title="var">c</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span> : <span class="id" title="var">nat</span>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">plus'</span> <span class="id" title="var">a</span> (<span class="id" title="var">plus'</span> <span class="id" title="var">b</span> <span class="id" title="var">c</span>) = <span class="id" title="var">plus'</span> (<span class="id" title="var">plus'</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>) <span class="id" title="var">c</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 </div>
@@ -3690,16 +3515,6 @@
 
 <br/>
 <span class="id" title="keyword">Print</span> <span class="id" title="var">rev</span>.<br/>
-<span class="comment">(*&nbsp;===&gt;<br/>
-&nbsp;&nbsp;rev<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;fun&nbsp;A&nbsp;:&nbsp;Type&nbsp;=&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fix&nbsp;rev&nbsp;(l&nbsp;:&nbsp;list&nbsp;A)&nbsp;:&nbsp;list&nbsp;A&nbsp;:=<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;match&nbsp;l&nbsp;with<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;<span class="inlinecode">[]</span>&nbsp;=&gt;&nbsp;<span class="inlinecode">[]</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;x&nbsp;::&nbsp;l'&nbsp;=&gt;&nbsp;rev&nbsp;l'&nbsp;++&nbsp;<span class="inlinecode">[<span class="id" title="var">x</span>]</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;forall&nbsp;A&nbsp;:&nbsp;Type,&nbsp;list&nbsp;A&nbsp;-&gt;&nbsp;list&nbsp;A<br/>
-*)</span><br/>
 
 <br/>
 </div>
@@ -3841,6 +3656,8 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">app'_spec</span> :<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">forall</span> (<span class="id" title="var">A</span> : <span class="id" title="keyword">Type</span>) (<span class="id" title="var">l1</span> <span class="id" title="var">l2</span> : <span class="id" title="var">list</span> <span class="id" title="var">A</span>),<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">app'</span> <span class="id" title="var">l1</span> <span class="id" title="var">l2</span> = <span class="id" title="var">app</span> <span class="id" title="var">l1</span> <span class="id" title="var">l2</span>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+<span class="id" title="var">Admitted</span>.<br/>
 
 <br/>
 </div>
@@ -4110,3 +3927,8 @@
 <br/>
 <span class="id" title="keyword">End</span> <span class="id" title="var">little_semantics</span>.<br/>
 </div>
+<footer>
+  <script src="jscoq/ui-js/jscoq-loader.js"></script>
+  <script src="jscoq/jscoq-embed.js"></script>
+</footer>
+</body>
